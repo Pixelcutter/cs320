@@ -1,0 +1,15 @@
+                         <{{  Character: Charlie  }}>
+                          
+Class: Fighter (Battle Master)
+Race: Hill Dwarf
+Sex: 
+Origin:  
+
+Criminal: You have access to a contact/liaison to get connected to other
+criminals. Specifically, you know the local messengers, corrupt caravan masters,
+and seedy travelers. You are considered 1 of these: Blackmailers, Burglar,
+Enforcer, Fence, Highway Robber, Hired Killer, Pickpocket, Smuggler
+
+
+Section: Inspiration
+---------------------

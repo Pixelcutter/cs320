@@ -1,0 +1,89 @@
+Dark,Sunlit
+Jungle,Pine
+Ruined,Thriving
+Green,Brown
+Warm,Cool
+Food,Barren
+Village(s),Uninhabited
+Mountain
+Plateau
+
+Stormy
+City(s)
+Traversable
+Buzzing
+Rivers
+Lake
+Monsters
+
+
+Fae Entrance
+Cave
+Ruin
+Dungeon
+Enchanted
+
+
+@Descriptions
+- Dark
+This forest is dark, the leaves above cut out the sunlight.
+- Sunlit
+This forest is lit easily by the sun or moon above.
+- Jungle
+This forest is a jungle, the canopy is thick and it teems with life.
+- Pine
+This forest is filled with coniferous trees
+- Ruined
+This forest has been ruined by a large fire, logging, or a large beast.
+- Thriving
+This forest is thriving.
+- Green
+This forest is green.
+- Brown
+This forest appears brown.
+- Warm
+This forest is uncomfortably warm.
+- Cool
+This forest is comfortably cool.
+- Food
+This forest has berries, mushrooms, and other sources of safe food.
+- Barren
+This forest seems barren of edible plants.
+- Village(s)
+This forest is populated by various villages and towns.
+- Uninhabited
+This forest seems completely uninhabited.
+- Mountain
+This forest has a large mountain range.
+- Plateau
+This forest has a large open plateau somewhere.
+- Stormy
+The leaves and branches on these trees seem to move on their own occasionally.
+- City(s)
+This forest has a large city in it
+- Traversable
+This forest is easily traversable via paths and roads.
+- Buzzing
+This forest is inhabited by insects, which are making loud noises.
+- Rivers
+This forest has rivers in it.
+- Lake
+This forest has a lake.
+- Monsters
+This forest is home to a large number of beasts.
+- Fae Entrance
+This forest has an entrance to the faewilds.
+- Cave
+This forest is known for it's advanced cave system.
+- Ruin
+This forest has a ruin of an ancient civilization in it.
+- Dungeon
+This forest has a villain's dungeon in it.
+- Enchanted
+This forest is known to be enchanted.
+
+~~~~~~~~~Explanations
+This is a list of traits assigned by biome. Each hex will be given a biome, and will gain additional traits based on that.
+Each trait has a description linked to it, which will be displayed to the user when they select a hex tile.
+Each tile will have a total of 6 traits, each is marked by a percentage chance to get it (out of 100), and some of the traits are none.
+Meaning, a tile may only have 2 traits. Once a trait is selected, it cannot be selected again.

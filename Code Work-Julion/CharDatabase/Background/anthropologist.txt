@@ -1,0 +1,10 @@
+anthropologist
+insight, religion
+0
+2
+leather-bound diary, bottle of ink, ink pen, traveler's clothes, 1 trinket
+0,0,10
+**
+You have adopted another's race culture as your characters culture as well, and are well trained in your race's and the chosen one's as well.
+You can view other people for a day to understand crude and basic language of that culture.
+**

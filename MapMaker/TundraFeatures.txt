@@ -1,0 +1,89 @@
+Arctic,Alpine
+Eternal Night,Eternal Day
+Constant Snow,No Snow
+Inhabited,Not Inhabited
+Animals, No Animals
+Over Ocean, Over Land
+Plants,No Plants
+Traversable
+Trading Routes
+
+Ice Formations
+Strange Sightings
+Auroras
+Constantly Foggy
+Deep Crevasse
+Glaciers
+Mountains
+
+
+Monster
+Cave Systems
+Dire Beasts
+Hidden Kingdom
+Eternal Weather
+
+
+@Descriptions
+- Arctic
+This tundra is snow and ice covered.
+- Alpine
+This tundra is not always covered in snow, and often has large swaths of rock.
+- Eternal Night
+This place is trapped in eternal night, where the sun never rises.
+- Eternal Day
+This place is trapped in eternal daytime, where the sun never sets.
+- Constant Snow
+This place experiences near constant snow.
+- No Snow
+This tundra has no precipitation, despite the presence of ice and snow.
+- Inhabited
+This place is known to be inhabited.
+- Not Inhabited
+Not known to be inhabited, this place is considered nonideal for life.
+- Animals
+With quite a lot of animals, the hunting oppotunities are endless, although the wildlife is known to hunt back.
+- No Animals
+This place boasts a distinct lack of animals.
+- Over Ocean
+This tundra is formed by a sheet of or thin rock over a vast ocean.
+- Over Land
+This is formed via ice and rock over land.
+- Plants
+There is an abundance of plant life here.
+- No Plants
+There is almost no plant life here.
+- Traversable
+This tundra is traversable.
+- Trading Routes
+This tundra has trading routes weaving through it.
+- Ice Formations
+This place is known for it's strange ice formations.
+- Strange Sightings
+This place is known for it's weird sightings, confusing even the most well prepared traveler.
+- Auroras
+This place is known for having auroras covering the sky during key times of year.
+- Constantly Foggy
+This place is covered in a thick blanket of fog, making long distance travel risky.
+- Deep Crevasse
+This place is covered in deep, possibly bottomless crevasses, making travel dangerous.
+- Glaciers
+With large glaciers dotting the landscape, seeing any measurable distance is hard.
+- Mountains
+This place has a massive mountain range in it, forcing any travelers to scale them.
+- Monster
+This place is home to a large beast.
+- Cave Systems
+This place is known for having cave systems sprinkled throughout.
+- Dire Beasts
+All the animals here are much larger than normal.
+- Hidden Kingdom
+This place has a completely hidden kingdom, unknown about elsewhere.
+- Eternal Weather
+The weather here is eternal, and neverending. If it's snowing, it's always snowing.
+
+~~~~~~~~~Explanations
+This is a list of traits assigned by biome. Each hex will be given a biome, and will gain additional traits based on that.
+Each trait has a description linked to it, which will be displayed to the user when they select a hex tile.
+Each tile will have a total of 6 traits, each is marked by a percentage chance to get it (out of 100), and some of the traits are none.
+Meaning, a tile may only have 2 traits. Once a trait is selected, it cannot be selected again.

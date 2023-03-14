@@ -1,0 +1,22 @@
+0<Name of Class>	fighter
+1<stat importance>	1,1,0,2,2,3	<STR,DEX,CON,INT,WIS,CHA>
+2<save Proficency> 	1,0,1,0,0,0	<Saves for said stats>
+3<armor proficency>	1,1,1,1		<Light, Medium, Heavy, Shields>
+4<weapon Proficency>	1,1,. . .	<Simple, Martial, Extra...>	#Make note of what it is, check for above 2 for special.
+5<Tool Proficency>	0		<State the tools used here, by commas. 0 & empty are both caught -> 'None'>
+6<Skill Number>		2
+7<Skill List>		acrobatics, animal handling, ...
+8<Archetypes List>	Battle Master, Champion, Samurai, Gunslinger
+9<Hit Dice>		10
+10**			<<Level content bellow, each line is a level, mark archetype with "!!">>
+11 <Lvl 1>		Fighting Style, Second Wind
+12 <Lvl 2>		Action Surge (x1)
+13 <Lvl 3>		!!Martial Archetype
+14 <Lvl 4>		Ability Score Improvement
+15 <Lvl 5>		Extra Attack (x1)
+. . .			. . .
+31 <Lvl 20>		. . .
+32** 			<<Explain what each thing is used as on lines:>>
+Fighting Style: You adopt a particular style of fighting as your specialty.
+. . .
+**

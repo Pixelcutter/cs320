@@ -1,0 +1,10 @@
+knight
+history, persuasion
+1 gaming set
+1
+Fine Clothes, Signet Ring, scroll of pedigree
+0,0,25
+**
+You have Nobel Birth, therefore you are welcomed in high society. Common folk may attempt to comfort you.
+You can secure an audience with local nobles if you need to.
+**

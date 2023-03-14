@@ -1,0 +1,10 @@
+faceless
+deception, intimidation
+disguise kit
+1
+disguise kit, costume
+0,0,10
+**
+You gain a public persona as well as your normal self too. You are often seen using this persona when in public.
+When you wear your disguise, you are seen as that persona and not yourself, and vice versa.
+**

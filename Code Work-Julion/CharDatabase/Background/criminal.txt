@@ -1,0 +1,11 @@
+criminal
+deception, stealth
+1 Gaming Set, Thieves Tools
+0
+Crowbar, Dark Common Clothes with hood
+0,0,15
+**
+You have access to a contact/liaison to get connected to other criminals.
+Specifically, you know the local messengers, corrupt caravan masters, and seedy travelers.
+You are considered 1 of these: Blackmailers, Burglar, Enforcer, Fence, Highway Robber, Hired Killer, Pickpocket, Smuggler
+**

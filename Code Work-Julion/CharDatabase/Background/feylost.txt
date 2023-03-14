@@ -1,0 +1,11 @@
+Fey Lost
+Deception, Survival
+Music Instrument
+1
+Musical Instrument, traveler's clothes, three trinkets
+0,0,8
+**
+You hold a fey mark, and were transformed in some way to be more animalistic or fairy like.
+When you are asleep, a feywild spirit may visit you if the dm wishes it. You remember each visit, and can hold conversations of it.
+Fey creatures are inclined to help you if you are in need while in the feywild.
+**

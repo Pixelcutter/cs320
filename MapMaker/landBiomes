@@ -1,0 +1,39 @@
+Aquatic
+/80/Aquatic #Nearest 6 tiles have 80 chance to be Aquatic until max water tiles are reached
+/5/Grassland
+/5/Beach
+/5/Tundra
+/5/Forest
+
+MAX #If max water capacity is reached, the following chances are followed
+/50/Beach
+/25/Forest
+/25/Grassland
+
+Beach
+2/100/Aquatic #At least 2 tiles near a beach tile MUST be Aquatic
+/50/Grassland
+/50/Forest
+
+Grassland
+1/100/Grassland
+/30/Grassland
+/50/Forest
+/20/Desert
+
+Forest
+2/100/Forest
+/50/Forest
+/20/Tundra
+/10/Desert
+
+Desert
+1/100/Desert
+/0/Tundra
+
+Tundra
+
+~~~~~ Explanations below
+
+Tiles will be allocated traits beginning with Aquatic > Beach > Grassland > Forest > Desert > Tundra
+Therefore, tundra will be filled by the hexes above it, and needs no percentages

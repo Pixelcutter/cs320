@@ -1,0 +1,45 @@
+druid
+3, 2, 1, 1, 0, 3
+0, 0, 0, 1, 1, 0
+1, 1, 0, 1
+0, 0, clubs, daggers, darts, javelins, maces, quarterstaffs, scimitars, sickles, slings, spears
+Herbalism Kit
+2
+arcana, animal handling, insight, medicine, nature, perception, religion, survival
+Dreams, Land, Moon, Shepard, Spores, Stars, Wildfire
+8
+**
+Druidic, Spellcasting
+Wildshape, Druid Circle, Wild Companion (Optional)
+
+Wild Shape Improvement, Ability Score Improvement, Cantrip Versatility (Optional)
+
+Druid Circle Feature
+
+Wild Shape Improvement, Ability Score Improvement, Cantrip Versatility (Optional)
+
+Druid Circle Feature
+
+Ability Score Improvement, Cantrip Versatility (Optional)
+
+Druid Circle Feature
+
+Ability Score Improvement, Cantrip Versatility (Optional)
+
+Timeless Body, Beast Spells
+Ability Score Improvement, Cantrip Versatility (Optional)
+Archdruid
+**
+Druidic: You can read, write, and speak a hidden language used by druids. You can automatically spot this language with this ability.
+SpellCasting: You can cast Druid Spells on the Druid Chart using the Wisdom Modifier.
+WildShape: You can transform into animals with the matching CR rating as stated in the Wild Shape Section. Please refer to that for indepth view in wild shape.
+Druid Circle: You gain an archetype for your druid class. This can alter your character when achieving this, and the druid circle features.
+Wild Companion (Optional): You gain the ability to cast Find Familiar spell without material exponents at the cost of one your wild shape slots. The familiar disappears after a number of hours equal to half of your druid level.
+Wild Shape Improvement: This increases the effect of wild shape as stated in the wild shape section.
+Ability Score Improvement: You may upgrade 2 ability scores by 1 up to a max of 20, or take a feat to upgrade your character.
+Cantrip Versatility (Optional): You may replace a cantrip within the druid spell list with another one.
+Druid Circle Feature: This allows you to increase your archetype, as stated in the archetype section.
+Timeless Body: For every 10 years, your body ages 1 year.
+Beast Spells: You can cast spells while within your wild shape form.
+ArchDruid: You can use your wild shape unlimited amount of times. Additionally: you can ignore verbal, somatic, and material components that lack a cost or consumed by a spell.
+**

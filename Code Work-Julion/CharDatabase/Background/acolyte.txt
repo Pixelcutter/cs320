@@ -1,0 +1,10 @@
+acolyte
+insight, religion
+0
+2
+Holy Symbol, Prayer Book or Prayer Wheel, 5 sticks of incense, vestments, common clothes
+0,0,15
+**
+You can receive free healing and care at temple or shrines of gods that share your faith.
+You can request aid the help of priests with non-hazardous activities that live near the church, temple, or shrine you serve directly.
+**

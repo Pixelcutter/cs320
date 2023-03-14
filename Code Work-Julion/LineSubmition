@@ -1,0 +1,1348 @@
+"""
+Github: https://github.com/gloghry/cs320
+Code Writer: Julion Oddy
+Summary: Character Generator, building pieces from Stats, Race, Class, Level, & Background.
+"""
+import random
+import pathlib
+import array
+import math
+#  ====================================================================================
+#  Background Functions
+#  ====================================================================================
+def bgchooser():
+    try:
+        bgnum = 0
+        bgList = open("CharDatabase/Background/$List.txt")
+        bgread = bgList.read()
+        bgEntries = bgread.split("\n")
+        for o in bgEntries:
+            if o:
+                bgnum += 1
+        bgChosen = bgEntries[random.randint(0,bgnum-1)]
+    finally:
+        bgList.close()
+        return bgChosen
+        def bgrollertry(bgChosen):
+    while True:
+        bgtest = bgChosen
+        opentest = False
+        bgpath = "CharDatabase/Background/"+str(bgtest)+".txt"
+        path = pathlib.Path(str(bgpath))
+        if path.exists():
+            opentest = True
+        else:
+            opentest = False
+            return False
+        if opentest:
+            break
+    return bgtest
+
+def fullbg():
+    while True:
+        while True:
+            mybg = bgchooser()
+            if bgrollertry(mybg):
+                break
+        print("Current Background: "+str(mybg))
+        bgFlage = False
+        while True:
+            print("Yes / No / Choose My Own")
+            incheck = input("Reroll? (y/n/c): ")
+            if incheck == "n":
+                bgFlag = True
+                break
+            if incheck == "y":
+                bgFlag = False
+                break
+            if incheck == "c":
+                mybg = pickbackground()
+                while True:
+                    choosecheck = input("You have gotten " + str(mybg) + ". Keep? (y/n): ")
+                    if choosecheck == "y":
+                        return mybg
+                    if choosecheck == "n":
+                        break
+                    else:
+                        print("Only 'y' or 'n' please.")
+            else:
+                print("Not Correct. 'y' or 'n' Only Please. ")
+        if bgFlag is True:
+            break
+    return mybg
+
+def bgabbilitiesadd(filename, bg):
+    try:
+        charfile = open("CharDatabase/characters/"+str(filename)+".txt",'a')
+        bgfile = open("CharDatabase/Background/"+str(bg)+".txt")
+        bgread = bgfile.read()
+        bgsplit = bgread.split("\n")
+        j = 7
+        while bgsplit[j] != "**":
+            charfile.write(str(bgsplit[j])+"\n")
+            j += 1
+    finally:
+        charfile.write("**\n")
+        bgfile.close()
+        charfile.close()
+
+def pickbackground():
+    try:
+        bgList = open("CharDatabase/Background/$List.txt")
+        bgread = bgList.read()
+        bgEntries = bgread.split("\n")
+        bgnum = len(bgEntries)
+        bgTrueList = []
+        for x in bgEntries:
+            if bgrollertry(str(x)):
+                bgTrueList.append(str(x))
+        i = 0
+        for y in bgTrueList:
+            print("Number ["+str(i)+"]: "+str(y))
+            i = i+1
+        while True:
+            num = input("Enter Number You Want: ")
+            if (int(num) <= i-1) and (int(num) >= 0):
+                print("Chosen: "+str(bgTrueList[int(num)]))
+                return bgTrueList[int(num)]
+            else:
+                print("Try Again.")
+    finally:
+        bgList.close()
+#  ====================================================================================
+#  Class Functions
+#  ====================================================================================
+def classchooser():
+    try:
+        classNum = 0
+        classList = open("CharDatabase/Class/$List.txt")
+        classRead = classList.read()
+        classEntries = classRead.split("\n")
+        for j in classEntries:
+            if j:
+                classNum += 1
+        ClassChosen = classEntries[random.randint(0, classNum-1)]
+    finally:
+        classList.close()
+        return ClassChosen
+
+def classrollertry(ClassChoosen):
+    while True:
+        classtest = ClassChoosen
+        opentest = False
+        classpath = "CharDatabase/Class/"+str(classtest)+".txt"
+        path = pathlib.Path(str(classpath))
+        if path.exists():
+            #  print("😊 Class File Exists! -> "+str(classtest))
+            opentest = True
+        else:
+            #  print("😢 Class File DOESNT Exist... -> "+str(classtest))
+            opentest = False
+        if opentest:
+            break
+    return classtest
+
+def archchoose(classname):
+    try:
+        file = open("CharDatabase/Class/"+classname+".txt")
+        classRead = file.read()
+        classLineList = classRead.split("\n")
+        archetypeList = classLineList[8].split(", ")
+        archnum = 0
+        for i in archetypeList:
+            if i:
+                archnum += 1
+        gotarch = archetypeList[random.randint(0, archnum-1)]
+        return str(gotarch)
+    except:
+        print("Somehow an error in the archetype choosing!!")
+    return str(gotarch)
+
+def fullclass():
+    while True:
+        while True:
+            myClass = classchooser()
+            if classrollertry(myClass):
+                arch = archchoose(myClass)
+                break
+        print("Current Class: "+str(arch)+" "+str(myClass))
+        classFlag = False
+        while True:
+            print("Yes / No / Choose My Own")
+            incheck = input("Reroll? (y/n/c): ")
+            if incheck == "n":
+                classFlag = True
+                break
+            if incheck == "y":
+                classFlag = False
+                break
+            if incheck == "c":
+                myClass = pickclass()
+                arch = archchoose(str(myClass))
+                while True:
+                    choosecheck = input("You have gotten " + str(arch) + " " + str(myClass) + ". Keep? (y/n): ")
+                    if choosecheck == "y":
+                        return myClass, arch
+                    if choosecheck == "n":
+                        break
+                    else:
+                        print("Only 'y' or 'n' please.")
+            else:
+                print("Not Correct. 'y' or 'n' Only Please. ")
+        if classFlag is True:
+            break
+    return myClass, arch
+
+def classbaseadd(filename, myclass, level):
+    try:
+        charfile = open("CharDatabase/characters/"+str(filename)+".txt",'a')
+        classfile = open("CharDatabase/Class/" + str(myclass) + ".txt")
+        classread = classfile.read()
+        classsplit = classread.split("\n")
+        j = 11
+        while (j-11) < level:
+            charfile.write("Level ["+str(j-10)+"]: "+str(classsplit[j])+"\n")
+            j += 1
+    finally:
+        charfile.write("**\n")
+        classfile.close()
+        charfile.close()
+
+def pickclass():
+    try:
+        clList = open("CharDatabase/Class/$List.txt")
+        clread = clList.read()
+        clEntries = clread.split("\n")
+        clnum = len(clEntries)
+        clTrueList = []
+        for x in clEntries:
+            if classrollertry(str(x)):
+                clTrueList.append(str(x))
+        i = 0
+        for y in clTrueList:
+            print("Number ["+str(i)+"]: "+str(y))
+            i = i+1
+        while True:
+            num = input("Enter Number You Want: ")
+            if (int(num) <= i-1) and (int(num) >= 0):
+                print("Chosen: " + str(clTrueList[int(num)]))
+                return clTrueList[int(num)]
+            else:
+                print("Try Again.")
+    finally:
+        clList.close()
+#  ====================================================================================
+#  Race Functions
+#  ====================================================================================
+def racechooser():
+    try:
+        raceNum = 0
+        raceList = open("CharDatabase/Race/$List.txt")
+        raceRead = raceList.read()
+        raceEntries = raceRead.split("\n")
+        for i in raceEntries:
+            if i:
+                raceNum += 1
+        RaceChoosen = raceEntries[random.randint(0, raceNum-1)]
+    finally:
+        raceList.close()
+        return RaceChoosen
+
+def racerollertry(RaceChoosen):
+    while True:
+        racetest = RaceChoosen
+        opentest = False
+        racepath = "CharDatabase/Race/"+str(racetest)+".txt"
+        path = pathlib.Path(str(racepath))
+        if path.exists():
+            #  print("😊 Race File Exists! -> "+str(racetest))
+            opentest = True
+        else:
+            #  print("😢 Race File DOESNT Exist... -> "+str(racetest))
+            opentest = False
+        if opentest:
+            break
+    return racetest
+
+def subchoose(racename):
+    try:
+        file = open("CharDatabase/Race/"+racename+".txt")
+        raceread = file.read()
+        raceLineList = raceread.split("\n")
+        subraceList = raceLineList[6].split(", ")
+        subnum = 0
+        for i in subraceList:
+            if i:
+                subnum += 1
+        gotsub = subraceList[random.randint(0,subnum-1)]
+    except:
+        print("Somehow an error in the subrace choosing!!")
+    if gotsub == "0":
+        gotsub = ""
+    return str(gotsub)
+
+def fullrace():
+    while True:
+        while True:
+            myRace = racechooser()
+            if racerollertry(myRace):
+                sub = subchoose(myRace)
+                break
+        print("Current Race: "+str(sub)+" "+str(myRace))
+        raceFlag = False
+        while True:
+            print("Yes / No / Choose My Own")
+            incheck = input("Reroll? (y/n/c): ")
+            if incheck == "n":
+                raceFlag = True
+                break
+            if incheck == "y":
+                raceFlag = False
+                break
+            if incheck == "c":
+                myRace = pickrace()
+                sub = subchoose(str(myRace))
+                while True:
+                    choosecheck = input("You have gotten " + str(sub) + " " + str(myRace) + ". Keep? (y/n): ")
+                    if choosecheck == "y":
+                        return myRace, sub
+                    if choosecheck == "n":
+                        break
+                    else:
+                        print("Only 'y' or 'n' please.")
+            else:
+                print("Not Correct. 'y' or 'n' Only Please. ")
+        if raceFlag is True:
+            break
+    return myRace, sub
+
+def racemod(myRace, myStats):
+    try:
+        racefile = open("CharDatabase/Race/"+str(myRace)+".txt")
+        raceread = racefile.read()
+        racesplit = raceread.split("\n")
+        racestat = racesplit[1].split(", ")
+        j = 0
+        while (j<6):
+            myStats[j] = int(myStats[j])+int(racestat[j])
+            j += 1
+    finally:
+        racefile.close()
+        return myStats
+
+def raceabilitiesadd(filename,myrace):
+    try:
+        charfile = open("CharDatabase/characters/"+str(filename)+".txt",'a')
+        racefile = open("CharDatabase/Race/"+str(myrace)+".txt")
+        raceread = racefile.read()
+        racesplit = raceread.split("\n")
+        j = 8
+        while racesplit[j] != "**":
+            charfile.write(str(racesplit[j])+"\n")
+            j += 1
+    finally:
+        charfile.write("**\n")
+        racefile.close()
+        charfile.close()
+
+def pickrace():
+    try:
+        raList = open("CharDatabase/Race/$List.txt")
+        raread = raList.read()
+        raEntries = raread.split("\n")
+        ranum = len(raEntries)
+        raTrueList = []
+        for x in raEntries:
+            if racerollertry(str(x)):
+                raTrueList.append(str(x))
+        i = 0
+        for y in raTrueList:
+            print("Number ["+str(i)+"]: "+str(y))
+            i = i+1
+        while True:
+            num = input("Enter Number You Want: ")
+            if (int(num) <= i-1) and (int(num) >= 0):
+                print("Chosen: " + str(raTrueList[int(num)]))
+                return raTrueList[int(num)]
+            else:
+                print("Try Again.")
+    finally:
+        raList.close()
+#  ====================================================================================
+#  helpfuncs.py File
+#  ====================================================================================
+class Character:
+    def __init__(self, Name, Stats, CharClass, CharRace, Level, Archetype, Subrace):
+        self.Name = Name
+        self.Stats = Stats
+        self.CharClass = CharClass
+        self.CharRace = CharRace
+        self.Level = Level
+        self.Archetype = Archetype
+        self.Subrace = Subrace
+
+def statmod(n):
+    return math.floor((n - 10) / 2)
+
+def statrollFDS():
+    y = array.array('i', [0, 0, 0, 0, 0, 0])
+    i = 0
+    for x in y:
+        rolls = array.array('i', [random.randint(1, 6), random.randint(1, 6), random.randint(1, 6), random.randint(1, 6)])
+        rolls.remove(min(rolls))
+        SumNum = sum(rolls)
+        y[i] = SumNum
+        i+= 1
+    z = y.tolist()
+    q = map(statmod, z)
+    return z
+
+def fullstat():
+    while True:
+        myStat = statrollFDS()
+        myMod = list(map(statmod, myStat))
+        print("Current Stat: "+str(myStat))
+        print("Current Mods: "+str(myMod))
+        statFlag = False
+        while True:
+            incheck = input("Reroll? (y/n): ")
+            if incheck == "n":
+                statFlag = True
+                break
+            if incheck == "y":
+                statFlag = False
+                break
+            else:
+                print("Not Correct. 'y' or 'n' Only Please. ")
+        if statFlag is True:
+            break
+    return myStat
+
+def isnum(input=None):
+    #checks to see if the input is a number, and only a number
+    try:
+        if input is None:
+            return False
+        if isinstance(input, list):
+            if len(input) == 1:
+                if isnum(input[0]):
+                    return True
+            return False
+        int(input)
+        numeric = str(input)
+        if numeric.isnumeric():
+            return True
+        else:
+            return False
+    except ValueError:
+        return False
+
+def isstring(input=None):
+    #  Checks to see if its a string, not numbers solely.
+    try:
+        if input is None:
+            return False
+        if isinstance(input, list):
+            if len(input) == 1:
+                if isstring(input[0]):
+                    return True
+            return False
+        numeric = str(input)
+        if numeric.isnumeric():
+            return False
+        return True
+    except ValueError:
+        return False
+
+def diceroll(num=20):
+    if isnum(num):
+        return random.randint(1, num)
+    else:
+        return ValueError
+
+def rollmany(amount="missing",dice=20):
+    #  Tries to roll many dice, and place into a list.
+    #  If amount is empty, will return a "Missing Argument" String
+    try:
+        if amount == "missing":
+            return ["Missing Argument"]
+        if isnum(amount):
+            i = 0
+            list =[]
+            while i < amount:
+                list.append(diceroll(dice))
+                i += 1
+            return list
+    except TypeError:
+        return ["TypeError"]
+#==============================================================================
+# info2.py file
+#==============================================================================
+if __name__ == '__main__':
+    while True:
+        infoInput = input("Class or Race or Archetype? (c/r/a): ")
+        check = 0
+        if str(infoInput) == "c":
+            #  Class checking.
+            check = 1
+            break
+        if str(infoInput) == "r":
+            #  race checking
+            check = 2
+            break
+        if str(infoInput) == "a":
+            #  archetype checking
+            check = 3
+            break
+        else:
+            print("Nah you wrong. Try again.")
+
+    if check == 1:
+        #  CLASS
+        while True:
+            className = input("What Class? Enter: ")
+            try:
+                classFile = open("CharDatabase/Class/"+className+".txt")
+                break
+            except IOError:
+                print("Nah, that dont exist. Try again.")
+
+        classFile = open("CharDatabase/Class/"+className+".txt")
+
+        classRead = classFile.read()
+        classLineList = classRead.split("\n")
+        fileLineCount = len(classLineList)
+        statPriority = classLineList[1].split(", ")
+        saveProficiency = classLineList[2].split(", ")
+        armorProficiency = classLineList[3].split(", ")
+        weaponProficiency = classLineList[4].split(", ")
+        toolProficiency = classLineList[5].split(", ")
+        skillNum = int(classLineList[6])
+        skillList = classLineList[7].split(", ")
+        archetypeList = classLineList[8].split(", ")
+        hitDice = int(classLineList[9])
+        #  ========================================================
+        print("Hit Dice:            "+str(hitDice))
+        print("Stats in Order:      [STR, DEX, CON, INT, WIS, CHA]")
+        print("Stat Priority:       "+str(statPriority))
+        print("Save Proficiency:    " + str(saveProficiency))
+        print("- - - - - - - - - - - - - - - - - - - - - - - - - -")
+        if armorProficiency[3] == "1":
+            armorProficiency[3] = "Shields"
+        else:
+            armorProficiency.pop(3)
+        if armorProficiency[2] == "1":
+            armorProficiency[2] = "Heavy"
+        else:
+            armorProficiency.pop(2)
+        if armorProficiency[1] == "1":
+            armorProficiency[1] = "Medium"
+        else:
+            armorProficiency.pop(1)
+        if armorProficiency[0] == "1":
+            armorProficiency[0] = "Light"
+        else:
+            armorProficiency.pop(0)
+        if not armorProficiency:
+            armorProficiency.append("None")
+        print("Armor Proficiency:   "+str(armorProficiency))
+        #  ================================================
+        if weaponProficiency[0] == "1":
+            weaponProficiency[0] = "Simple"
+            wpSimFlag = True
+        else:
+            wpSimFlag = False
+        if weaponProficiency[1] == "1":
+            weaponProficiency[1] = "Martial"
+            wpMarFlag = True
+        else:
+            wpMarFlag = False
+        if wpMarFlag is False:
+            weaponProficiency.pop(1)
+        if wpSimFlag is False:
+            weaponProficiency.pop(0)
+        if not weaponProficiency:
+            weaponProficiency.append("None")
+        print("Weapon Proficiency:  "+str(weaponProficiency))
+        #  ================================================
+        if toolProficiency[0] == "":
+            toolProficiency.pop(0)
+        if toolProficiency[0] == "0":
+            toolProficiency.pop(0)
+        if not toolProficiency:
+            toolProficiency.append("None")
+        print("Tool Proficiency:    "+str(toolProficiency))
+        #  ================================================
+        print("- - - - - - - - - - - - - - - - - - - - - - - - - -")
+        print("Number of Skills to Choose: "+str(skillNum))
+        print("Skills:              "+str(skillList))
+        print("- - - - - - - - - - - - - - - - - - - - - - - - - -")
+        print("Archetype Options:   "+str(archetypeList))
+        #  ================================================
+        print("- - - - - - - - - - - - - - - - - - - - - - - - - -")
+        print("Class Features By Level: ")
+        k = 1
+        o = 11
+        while o < fileLineCount:
+
+            if classLineList[o] == "**":
+                break
+
+            print("Level "+str(k)+": "+str(classLineList[o]))
+            k += 1
+            o += 1
+    if check == 2:
+        raceName = input("What Race? Enter: ")
+        raceFile = open("Race/"+raceName+".txt")
+        print(raceFile.read())
+#  ====================================================================================
+#  Rolls.py file
+#  ====================================================================================
+def roll(num):
+    if not num:
+        return random.randint(1, 20)
+    return random.randint(1, num)
+
+def rollmax(num):
+    if not num:
+        return 20
+    if isnum(num):
+        return int(num)
+
+def modcheck(num):
+    if isnum(num):
+        return num
+    if not num:
+        return "0"
+
+def continuetoroll():
+    while True:
+        num = input("Dice Size? Enter: ")
+        if num == "q":
+            break
+        if isnum(num) or (not num):
+            result = roll(num)
+            mod = input("Modifier for it? Enter:")
+            mod = modcheck(mod)
+            max = rollmax(num)
+            output = int(result)+int(mod)
+            print("Total outcome: "+str(result)+" + "+str(mod)+" = "+str(output))
+            if (result == 1):
+                print("Critical Fail! Boo!")
+            if(result == max):
+                print("Critical Rolled! Woo!")
+            print("- = - = - = - = - = - = - = - = -")
+        if (num != "q") and (isnum(num) is False) and str(num):
+            print("Not q or number. Try again.")
+    return "Done"
+
+def singleroll(num=20, inputmod=0):
+        if num == "q":
+            return (-1)
+        if isnum(num) or (not num):
+            result = roll(num)
+            mod = modcheck(inputmod)
+            max = rollmax(num)
+            output = int(result)+int(mod)
+            print("Total outcome: "+str(result)+" + "+str(mod)+" = "+str(output))
+            if (result == 1):
+                print("Critical Fail! Boo!")
+            if(result == max):
+                print("Critical Rolled! Woo!")
+            print("- = - = - = - = - = - = - = - = -")
+        if (num != "q") and (isnum(num) is False) and num:
+            print("Not q or number. Try again.")
+
+#  ====================================================================================
+#  smallfuncs.py File --> Attempts to create a full character.
+#  ====================================================================================
+
+def chargen(name):
+    fileExist = os.path.exists("CharDatabase/characters/" + name + ".txt")
+    if fileExist:
+        print("File Exists!")
+        while True:
+            editExist = input("Override? y/n: ")
+            if editExist == "y":
+                filetemp = open("CharDatabase/characters/" + name + ".txt", "w")
+                break
+            if editExist == "n":
+                skipEnd = True
+                print("No Override! Goodbye.")
+                return 1 #  Goodbye exit.
+            else:
+                print("Please Answer only in y or n...")
+    else:
+        filetemp = open("CharDatabase/characters/" + name + ".txt", "x")
+    choicelist =    ["0: Level",    "1: Race",  "2: Class",     "3: Background",    "4: Stats"]
+    templist =      ['level', 'race', 'subrace', 'class', 'archetype', 'background', 'stats']
+    while choicelist != []:
+        choiceA = input("What do you want to do now?\n|"+str(choicelist)+"|\nEnter Here: ")
+        if (choiceA == "0") and ("0: Level" in choicelist):
+            while True:
+                try:
+                    levelChoice = int(input("What Level do you want? (1-20): "))
+                    if (levelChoice >= 1) and (levelChoice <= 20):
+                        break
+                    else:
+                        print("Only Levels between 1 and 20 please!")
+                except:
+                    print("Not valid! Please choose a number between 1 and 20 only.")
+            print("Level Chosen: "+str(levelChoice))
+            templist[0] = levelChoice
+            choicelist.pop(choicelist.index("0: Level"))
+        if (choiceA == "1") and ("1: Race" in choicelist):
+            #  Action on getting a random Race
+            #  (And sub race!)
+            raceChoice, subChoice = fullrace()
+            templist[1] = raceChoice
+            templist[2] = subChoice
+            choicelist.pop(choicelist.index("1: Race"))
+            print("Lets say you got your race for now. Awesome.")
+        if (choiceA == "2") and ("2: Class" in choicelist):
+            classChoice, archChoice = fullclass()
+            templist[3] = classChoice
+            templist[4] = archChoice
+            choicelist.pop(choicelist.index("2: Class"))
+        if (choiceA == "3") and ("3: Background" in choicelist):
+            # Action on getting background.
+            bgChoice = fullbg()
+            templist[5] = bgChoice
+            choicelist.pop(choicelist.index("3: Background"))
+        if (choiceA == "4") and ("4: Stats" in choicelist):
+            #Action on getting stats.
+            statChoice = fullstat()
+            templist[6] = statChoice
+            choicelist.pop(choicelist.index("4: Stats"))
+        if (choiceA != "0") and (choiceA != "1") and (choiceA != "2") and (choiceA != "3") and (choiceA != "4"):
+            print("Invalid! Try again!")
+        print("- = - = - = - = - = - = - = - = - = - = - = - = - = - = -")
+    templist[6] = racemod(templist[1],templist[6])
+    print("Your Current Character: " + str(name) + " -> " + str(templist))
+    i = 0
+    filetemp.write(str(name)+"\n")
+    while i < 7:
+        filetemp.write(str(templist[i])+"\n")
+        i += 1
+    filetemp.write("**\n")
+    filetemp.close()
+    bgabbilitiesadd(name,templist[5])
+    raceabilitiesadd(name,templist[1])
+    classbaseadd(name,templist[3],templist[0])
+    return 0
+"""
+====================================================================================
+    THIS STUFF IS CONSIDERED OLD CONTENT USED AS BASIC IDEAS AND TESTING EARLY PYTHON.
+
+   This section right now is just considered old version of code, and testing. These programs/lines of code are not working
+   on the main program for my cool cam, but have been helpful for the current set up and process of what the main code is.
+
+   The Folder "Repeated Code" in the github SHOULD NOT Count to coding line limit, as updated versions of the files ARE
+   being used in the current main part of the program. These are just- archived versions that are not being updated.
+
+   The Other content, in the same directory, CAN be counted for the line code, as they were tests in the python and the
+   functions built into python to code. But this is up to your discretion on this.
+
+   As a reference point, these lines of code have/were used in the mid-term submition, but are not being worked on after
+   the said midterm. newer, refactored versions and fully-rewritten versions are above.
+
+====================================================================================
+"""
+#====================================================================================
+# Old Content, used to study python and early attempts at work.
+#====================================================================================
+if __name__ == '__main__':
+    print("Welcome to the Character Creator! What Level are you starting at? Enter Integer Bellow (1-20)")
+    while True:
+        lvlNum = input()
+        try:
+            intVal = int(lvlNum)
+            if int(lvlNum) in range(1, 21):
+                break
+            else:
+                print("Not a integer between 1 and 20.")
+        except ValueError:
+            print("This is not a integer, please try again.")
+    print("You have entered "+str(lvlNum)+".")
+    print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n")
+    try:
+        raceNum = 0
+        raceList = open("Race/$List.txt")
+        raceRead = raceList.read()
+        raceEntries = raceRead.split("\n")
+        for i in raceEntries:
+            if i:
+                raceNum += 1
+        raceFlag = False  # please don't cancel me, this stuff is just easy term.
+        while True:
+            raceRand = raceEntries[random.randint(0, raceNum)]
+            print("Currently Random Race: " + str(raceRand) + ".")
+            while True:
+                raceInp = input("Would you like to roll your race again? (y/n): ")
+                if str(raceInp) == "n":
+                    raceFlag = True
+                    break
+                if str(raceInp) == "y":
+                    print("Re-rolling...")
+                    break
+                else:
+                    print("Not valid, please choose y or n")
+            if raceFlag is True:
+                break
+        raceNum = 0
+        print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n")
+        classNum = 0
+        classList = open("Class/$List.txt")
+        classRead = classList.read()
+        classEntries = classRead.split("\n")
+        for j in classEntries:
+            if j:
+                classNum += 1
+        classFlag = False
+        while True:
+            classRand = classEntries[random.randint(0, classNum)]
+            print("Currently Random Class: " + str(classRand) + ".")
+            while True:
+                classInp = input("Would you like to roll your class again? (y/n): ")
+                if str(classInp) == "n":
+                    classFlag = True
+                    break
+                if str(classInp) == "y":
+                    print("Re-rolling...")
+                    break
+                else:
+                    print("Not valid, please choose y or n")
+            if classFlag is True:
+                break
+        classNum = 0
+        print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n")
+        print(str(raceRand + " " + classRand))
+    finally:
+        try:
+            raceList.close()
+            classList.close()
+        finally:
+            raceRand = 0
+            classRand = 0
+#====================================================================================
+#
+#====================================================================================
+
+def classinfo():
+    print("Class Info: ")  #  Sadly Never Finished
+
+def raceinfo():
+    print("Race Info: ")  #  Sadly never finished
+
+#====================================================================================
+#
+#====================================================================================
+if __name__ == '__main__':
+    test = 0
+    try:
+        raceNum = 0
+        classNum = 0
+        raceList = open("Race/$List.txt")
+        classList = open("Class/$List.txt")
+        raceRead = raceList.read()
+        classRead = classList.read()
+        raceEntries = raceRead.split("\n")
+        classEntries = classRead.split("\n")
+        for i in raceEntries:
+            if i:
+                raceNum += 1
+        for j in classEntries:
+            if j:
+                classNum += 1
+        raceRand = raceEntries[random.randint(0, raceNum)]
+        classRand = classEntries[random.randint(0, classNum)]
+        print(str(raceRand + " " + classRand))
+    finally:
+        raceList.close()
+        classList.close()
+        raceRand = 0
+        classRand = 0
+#====================================================================================
+#
+#====================================================================================
+if __name__ == '__main__':
+    test = 1
+    if test == 0:
+        print("State your name:")
+        wrInput = input()
+        print("Your name is: "+str(wrInput)+".")
+        if str(wrInput) == str("0"):
+            print("Zero Detected. Nice.")
+        else:
+            print("Non-Zero.")
+    if test == 1:
+        print("Name Class:")
+        wrInput = input()
+        f = open("Class/"+str(wrInput)+".txt")
+        print(f.read())
+#====================================================================================
+#
+#====================================================================================
+def print_hi(name):
+    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+class SetStat:
+    def __init__(self, str, dex, con, int, wis, cha):
+        self.str = str
+        self.dex = dex
+        self.con = con
+        self.int = int
+        self.wis = wis
+        self.cha = cha
+    def show(self):
+        print("Stats are show as the following:" + str(self.str) + str(self.dex) + str(self.con) + str(self.int) + str(
+            self.wis) + str(self.cha))
+    def generate():
+        rolls = []
+        for rolls in range(4):
+            x = random.randint(1, 6)
+            rolls.__add__(x)
+        del rolls[rolls.index(min(rolls))]
+        num = sum(rolls)
+        return num
+class Stat:
+    def __init__(self, num):
+        self.num = num
+if __name__ == '__main__':
+    print_hi('PyCharm')
+    print(f'this is a test')
+    y = SetStat(1, 2, 3, 4, 5, 6)
+    y.show()
+    i = array.array('d', (0 for d in range(0, 5)))
+    i[0] = generate()
+    i[1] = generate()
+    i[2] = generate()
+    i[3] = generate()
+    i[4] = generate()
+    i[5] = generate()
+#====================================================================================
+#
+#====================================================================================
+if __name__ == '__main__':
+    test = 3
+    try:
+        f = open("thing.txt")
+        if test == 0:
+            print(f.read(20))  # Reads 20 characters
+            print(f.tell())  # Says what spot its on. Should be 21.
+            print("- - - - - - -")  # Separating
+            print(f.read())  # If not specified, read to end.
+            print(f.tell())  # Should Read final spot.
+            print("- - - - - - -")
+            f.seek(0)  # Goes to beginning.
+            print(f.read())  # Rereading all of it.
+            f.seek(0)
+        if test == 1:
+            print("==NEW TESTING==\n==LINE BY LINE==")
+            for line in f:
+                print(line, end='')
+            f.seek(0)
+            print("\n")
+            print("==NEW TESTING==\n==Grab and Put Rewrite==")
+            g = open("write.txt", "w")  # THIS WILL REPLACE FILE CONTENT IN THERE.
+            fLine = f.readline()
+            g.write(fLine)
+            g.close()
+            g = open("write.txt")
+            print(g.read())
+            f.seek(0)
+        if test == 2:
+            print("==NEW TESTING==\n==Grab and Put Append==")
+            g = open("write2.txt", "a")  # THIS WILL ADD ON I BELIEVE
+            fLine = f.readline()
+            g.write(fLine)  # Will Append to a new line bellow.
+            g.close()
+            g = open("write2.txt")
+            print(g.read())
+            f.seek(0)
+            g.close(0)
+        if test == 3:
+            Counter = 0
+            Content = f.read()
+            ConList = Content.split("\n")
+            for i in ConList:
+                if i:
+                    Counter += 1
+            print("ConList: ")
+            print(ConList)  # Shows the separated Lines.
+            point = ConList[Counter]
+            print("Final Line of " + str(Counter + 1) + ":")  # Shows int to string capability.
+            print(point)
+            print("Counter: ")
+            print(Counter + 1)  # Counter will show 3, meaning 0,1,2,3 . . . +1 Shows amount of lines.
+    finally:
+        f.close()
+#  ====================================================================================
+#
+#  ====================================================================================
+def assgn1(variable):
+    positive = [18,17,16,15,14]
+    if variable in positive:
+        return True
+    else:
+        return False
+def assgn2(variable):
+    negative = [9,8,7,6,5,4,3]
+    if variable in negative:
+        return True
+    else:
+        return False
+def assgn3(variable):
+    neutral = [13,12,11,10]
+    if variable in neutral:
+        return True
+    else:
+        return False
+if __name__ == '__main__':
+    debug = 0
+    assignment = 1
+    if debug == 1:
+        print("Hello World!\n")  # Testing Print Statements
+    x = random.randint(1, 6)  # Testing the random Int workings, Low-to-High as variables.
+    if debug == 1:
+        print("Just a random number:", x)  # Shows the random number.
+    y = array.array('i', [0, 0, 0, 0, 0, 0])  # Sets up the array to hold the 6 stats.
+    i = 0  # My brain is so new to python, I'm using an int to count upwards on the for loop to match Array.
+    for x in y:
+        rolls = array.array('i',
+                            [random.randint(1, 6), random.randint(1, 6), random.randint(1, 6), random.randint(1, 6)])
+        if debug == 1:
+            print("Full Array list of Rolls:", rolls)  # Output array('i', [1, 2, 3, 4]) Some numbers
+        if debug == 1:
+            print("First Rolled Item:", rolls[0])  # Outputs single/1st number in array.
+        rolls.remove(min(rolls))  # Removes the lowest number in array.
+        if debug == 1:
+            print("Removed Lowest.\nFull Array list of Rolls:", rolls)  # Output array('i', [2, 3, 4])
+        SumNum = sum(rolls)  # Sums the roll array into single int.
+        y[i] = SumNum  # saves SumNum into Stat array
+        i += 1  # Increments so smooth brain me can work through arrays in python.
+        if debug == 1:
+            print("Sum of current Rolls:", SumNum)  # Shows SumNum as debug assurance.
+    if debug == 1:
+        print(y)  # Prints full Array Output: array('i', [1, 2, 3, 4, 5, 6])
+    print("Stat and Mods are as follows:")  # Sets up actual posted content.
+    z = y.tolist()  # Transfer's arrays into lists.
+    print(z)  # Print said list.
+    q = map(statmod, z)  # Maps Z to modding Definition
+    print(list(q))  # Prints said modded list.
+    if assignment == 1:
+        filtered = filter(assgn1, z)
+        print("Your good rolls:")
+        for s in filtered:
+            print(s)
+        filtered = filter(assgn3, z)
+        print("Your average rolls:")
+        for s in filtered:
+            print(s)
+        filtered = filter(assgn2, z)
+        print("Your bad rolls:")
+        for s in filtered:
+            print(s)
+"""
+Bellow this point will be the database content. I will do it in sections, flowing 1 file into the next, demarking with 3 single line comment, as like above.
+The order will be Backgrounds -> Class -> Race
+I will NOT include the "$List.txt" , "$Template.txt", and "@PossibleFullList.txt" files in the line count.
+List is used in the code yes, but its a list of names, nothing else important or in any specific order.
+Template is just that- a template for that section. Not used in any of the code.
+PossibleFullList was just a marking thing for myself to see what else I could make or offer as help for others.
+
+NOTE: White spaces bellow are empty spots but its simply saying that section just has a NULL, Nothing, or Non-Applicable
+      So honestly I do not know if these should count as lines or not, so that will be up to you!
+"""
+#  ====================================================================================
+#  BACKGROUNDS
+#  ====================================================================================
+acolyte
+insight, religion
+0
+2
+Holy Symbol, Prayer Book or Prayer Wheel, 5 sticks of incense, vestments, common clothes
+0,0,15
+**
+You can receive free healing and care at temple or shrines of gods that share your faith.
+You can request aid the help of priests with non-hazardous activities that live near the church, temple, or shrine you serve directly.
+**
+anthropologist
+insight, religion
+0
+2
+leather-bound diary, bottle of ink, ink pen, traveler's clothes, 1 trinket
+0,0,10
+**
+You have adopted another's race culture as your characters culture as well, and are well trained in your race's and the chosen one's as well.
+You can view other people for a day to understand crude and basic language of that culture.
+**
+criminal
+deception, stealth
+1 Gaming Set, Thieves Tools
+0
+Crowbar, Dark Common Clothes with hood
+0,0,15
+**
+You have access to a contact/liaison to get connected to other criminals.
+Specifically, you know the local messengers, corrupt caravan masters, and seedy travelers.
+You are considered 1 of these: Blackmailers, Burglar, Enforcer, Fence, Highway Robber, Hired Killer, Pickpocket, Smuggler
+**
+entertainer
+acrobatics, performance
+disguise kit, musical instrument
+0
+musical instrument, trinket of a lover, costume
+0,0,15
+**
+You gain a entertainer routine that you can practice and earn money from. talk with your DM for what you two can create.
+You can earn free lodging and food for modest or comfortable level if you perform each night, in addition, you can make money with these performances.
+**
+faceless
+deception, intimidation
+disguise kit
+1
+disguise kit, costume
+0,0,10
+**
+You gain a public persona as well as your normal self too. You are often seen using this persona when in public.
+When you wear your disguise, you are seen as that persona and not yourself, and vice versa.
+**
+Fey Lost
+Deception, Survival
+Music Instrument
+1
+Musical Instrument, traveler's clothes, three trinkets
+0,0,8
+**
+You hold a fey mark, and were transformed in some way to be more animalistic or fairy like.
+When you are asleep, a feywild spirit may visit you if the dm wishes it. You remember each visit, and can hold conversations of it.
+Fey creatures are inclined to help you if you are in need while in the feywild.
+**
+fisher
+history, survival
+0
+1
+Fishing tackle, a net, a favorite fishing lure or oiled leather wading boots, a set of traveler's clothes
+0,0,10
+**
+You gain advantage when making checks using the fishing. Including this, you can feed up to you and 10 other people.
+You gain a fishing tale, a story that you can tell and is true. Please make sure to talk with your DM on what it is.
+**
+hermit
+Medicine, Religion
+Herbalism Kit
+1
+scroll case stuffed full of notes from your studies or prayers, winter blanket, set of common clothes, herbalism kit
+0,0,5
+**
+You have been very secluded, and you/your dm can come up with a story on why your character was secluded for so long.
+You have made a discovery related to your seclusion that is built between you and your DM.
+**
+knight
+history, persuasion
+1 gaming set
+1
+Fine Clothes, Signet Ring, scroll of pedigree
+0,0,25
+**
+You have Nobel Birth, therefore you are welcomed in high society. Common folk may attempt to comfort you.
+You can secure an audience with local nobles if you need to.
+**
+noble
+History, Persuasion
+Gaming set
+1
+Fine Clothing, Signet Ring, Scroll of Pedigree
+0,0,25
+**
+You hold a position of privillege, and are welcomed into high society. Commonfolk may give accommodations to appease you.
+**
+sage
+arcana, history
+0
+2
+bottle of ink, quill, small knife, common clothes
+0,0,10
+**
+You gain a specialty of scholarly training, usually those that match magical, chemical, or astrological style.
+You can know where to find info within a city or a location that has public access to it. With your background, you also have access to more places than a normal person would.
+**
+spy
+deception, stealth
+gaming set, thieves tools
+0
+crowbar, dark common clothes with hood
+0,0,15
+**
+You are considered a social spy that specialize themselves with info and trading of said info. You know a specific detail that can hurt someone very important.
+You have access to criminal contacts, people who you can trust that are not with the law.
+**
+#  ====================================================================================
+#  CLASSES
+#  ====================================================================================
+druid
+3, 2, 1, 1, 0, 3
+0, 0, 0, 1, 1, 0
+1, 1, 0, 1
+0, 0, clubs, daggers, darts, javelins, maces, quarterstaffs, scimitars, sickles, slings, spears
+Herbalism Kit
+2
+arcana, animal handling, insight, medicine, nature, perception, religion, survival
+Dreams, Land, Moon, Shepard, Spores, Stars, Wildfire
+8
+**
+Druidic, Spellcasting
+Wildshape, Druid Circle, Wild Companion (Optional)
+
+Wild Shape Improvement, Ability Score Improvement, Cantrip Versatility (Optional)
+
+Druid Circle Feature
+
+Wild Shape Improvement, Ability Score Improvement, Cantrip Versatility (Optional)
+
+Druid Circle Feature
+
+Ability Score Improvement, Cantrip Versatility (Optional)
+
+Druid Circle Feature
+
+Ability Score Improvement, Cantrip Versatility (Optional)
+
+Timeless Body, Beast Spells
+Ability Score Improvement, Cantrip Versatility (Optional)
+Archdruid
+**
+Druidic: You can read, write, and speak a hidden language used by druids. You can automatically spot this language with this ability.
+SpellCasting: You can cast Druid Spells on the Druid Chart using the Wisdom Modifier.
+WildShape: You can transform into animals with the matching CR rating as stated in the Wild Shape Section. Please refer to that for indepth view in wild shape.
+Druid Circle: You gain an archetype for your druid class. This can alter your character when achieving this, and the druid circle features.
+Wild Companion (Optional): You gain the ability to cast Find Familiar spell without material exponents at the cost of one your wild shape slots. The familiar disappears after a number of hours equal to half of your druid level.
+Wild Shape Improvement: This increases the effect of wild shape as stated in the wild shape section.
+Ability Score Improvement: You may upgrade 2 ability scores by 1 up to a max of 20, or take a feat to upgrade your character.
+Cantrip Versatility (Optional): You may replace a cantrip within the druid spell list with another one.
+Druid Circle Feature: This allows you to increase your archetype, as stated in the archetype section.
+Timeless Body: For every 10 years, your body ages 1 year.
+Beast Spells: You can cast spells while within your wild shape form.
+ArchDruid: You can use your wild shape unlimited amount of times. Additionally: you can ignore verbal, somatic, and material components that lack a cost or consumed by a spell.
+**
+fighter
+1, 1, 0, 2, 2, 3
+1, 0, 1, 0, 0, 0
+1, 1, 1, 1
+1, 1
+0
+2
+acrobatics, animal handling, athletics, history, insight, intimidation, perception, survival
+Battle Master, Champion, Samurai, Gunslinger, Cavalier, Echo Knight, Psi Warrior, Rune Knight, Arcane Archer, Eldritch Knight
+10
+**
+Fighting Style, Second Wind
+Action Surge (x1)
+!!Martial Archetype
+Ability Score Improvement, Martial Versatility (Optional)
+Extra Attack (x1), Proficiency Bonus
+Ability Score Improvement, Martial Versatility (Optional)
+!!Martial Archetype feature
+Ability Score Improvement, Martial Versatility (Optional)
+Indomitable (x1), Proficiency Bonus
+!!Martial Archetype feature
+Extra Attack (x2)
+Ability Score Improvement, Martial Versatility (Optional)
+Indomitable (x2), Proficiency Bonus
+Ability Score Improvement, Martial Versatility (Optional)
+!!Martial Archetype feature
+Ability Score Improvement, Martial Versatility (Optional)
+Action Surge (x2), Indomitable (x3), Proficiency Bonus
+!!Martial Archetype feature
+Ability Score Improvement, Martial Versatility (Optional)
+Extra Attack (x3)
+**
+Fighting Style: You adopt a particular style of fighting as your specialty. Choose an option that you wish, regarding the book. You cannot take a Fighting Style Option more than once, even if you get the choice again in the future.
+Second Wind: You can regain Hit Points (HP) equal to 1d10+ Your Level. This can be done as a bonus action, and can only be used once, refreshed after a minimum short rest.
+Action Surge: You can take one additional action on your turn. This can be done once, before needing to refresh after a minimum short rest.
+!!Martial Archetype: This will allow you to gain the abilities from the chosen archetype for your class.
+Ability Score Improvement: You may upgrade 2 ability scores by 1 up to a max of 20, or take a feat to upgrade your character.
+Martial Versatility (Optional): You can replace your fighting style with another, and same goes with Maneuvers if you are a battle master.
+Indomitable: You may reroll a saving throw, and use the new roll as the save. This can be done x amount of times before needing a long rest.
+Proficiency Bonus: You increase your proficiency bonus by 1 each time this shows up.
+**
+wizard
+3, 2, 1, 0, 1, 2
+0, 0, 0, 1, 1, 0
+0, 0, 0, 0
+0, 0, Dagger, Dart, Sling, Quarterstaff, Light Crossbow
+Writing Kit, Arcane Research Kit
+2
+Arcana, History, Insight, Investigation, Medicine, Religion
+Illusion, Necromancy, War Magic, Evocation
+6
+**
+SpellCasting, Arcane Recovery
+Arcane Tradition
+Cantrip Formulas (Optional)
+Ability Score Improvement
+
+Arcane Tradition Feature
+
+Ability Score Improvement
+
+Arcane Tradition Feature
+
+Ability Score Improvement
+
+Arcane Tradition Feature
+
+Ability Score Improvement
+
+Spell Mastery
+Ability Score Improvement
+Signature Spells
+**
+SpellCasting: You gain the ability to cast spells using the INT ability score as your modifier. See the Wizard Chart for more details.
+Arcane Recovery: Once per day, after a short rest, you can recover a total of 1/2 your level worth of spell slots of level. (Lvl 4 wizard can get 1 lvl-2 spell slot, or 2 lvl-1 spell slots)
+Arcane Tradition: You can choose an arcane tradition to be your archetype.
+Cantrip Formulas (Optional): You can replace a wizard cantrip with another during a lost rest.
+Ability Score Improvement: You may upgrade 2 ability scores by 1 up to a max of 20, or take a feat to upgrade your character.
+Arcane Tradition Feature: With the Chosen Arcane Tradition Archetype, you can gain an effect at the coresponding level.
+Spell Mastery: Choose a Lvl-1 and a Lvl-2 spell, when you have them prepared, you can cast them for free at their lowest level. You can rechoose these after a long rest (or 8 hours).
+Signature Spells: Choose 2 Lvl-3 spells, you can cast them once for free per short or long rest, and do not count to the number of spells you have prepared.
+**
+#  ====================================================================================
+#  RACES
+#  ====================================================================================
+Dwarf
+0, 0, 2, 0, 0, 0
+Medium
+25
+50, 350
+Common, Dwarvish
+Hill, Mountain, Duergar
+**
+Darkvision: Able to see in the dark within a radius of 60 ft.
+Combat Training: Proficency in Battleaxe, Handaxe, Light Hammer, and Warhammer
+Tool Proficency: Choose 1 tool to be trained in: Smiths Tools, Brewers Supplies, or Mason's Tools
+Stonecutting: When you make a History Check on Stonework, you add double proficiency to the check instead of normal.
+**
+Elf
+0, 2, 0, 0, 0, 0
+Medium
+30
+100, 750
+Common, Elven
+Dark, High, Wood
+**
+Darkvision: Able to see in the dark within a radius of 60 ft.
+Fey Ancestry: Advantage against being charmed, and magic cannot put you to sleep.
+Trance: Elves don't need sleep, but meditate 4 hours a day. Therefore, an 8 hour rest can be done within a 4 hour period for Elves.
+Keen Senses: Proficiency in Perception.
+**
+Human
+1, 1, 1, 1, 1, 1
+Medium
+30
+16, 90
+Common, +1 Extra Player Choice
+0
+**
+0
+**

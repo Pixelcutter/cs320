@@ -1,0 +1,12 @@
+acolyte
+criminal
+knight
+hermit
+noble
+fisher
+feylost
+faceless
+sage
+anthropologist
+spy
+entertainer

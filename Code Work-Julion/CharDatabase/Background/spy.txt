@@ -1,0 +1,10 @@
+spy
+deception, stealth
+gaming set, thieves tools
+0
+crowbar, dark common clothes with hood
+0,0,15
+**
+You are considered a social spy that specialize themselves with info and trading of said info. You know a specific detail that can hurt someone very important.
+You have access to criminal contacts, people who you can trust that are not with the law.
+**

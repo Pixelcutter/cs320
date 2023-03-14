@@ -1,0 +1,13 @@
+Dwarf
+0, 0, 2, 0, 0, 0
+Medium
+25
+50, 350
+Common, Dwarvish
+Hill, Mountain, Duergar
+**
+Darkvision: Able to see in the dark within a radius of 60 ft.
+Combat Training: Proficency in Battleaxe, Handaxe, Light Hammer, and Warhammer
+Tool Proficency: Choose 1 tool to be trained in: Smiths Tools, Brewers Supplies, or Mason's Tools
+Stonecutting: When you make a History Check on Stonework, you add double proficiency to the check instead of normal.
+**

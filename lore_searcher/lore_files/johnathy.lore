@@ -1,0 +1,125 @@
+{
+    "character-name": "Johnathy",
+    "cBio": "He like to drift\n",
+    "cClass": "Drifter",
+    "cRace": "Human",
+    "cOrigin": "No one knows",
+    "isCamp": false,
+    "cSex": "male",
+    "cArch": "Skeevy",
+    "vNum": 0,
+    "page-total": 2,
+    "section-names": [
+        "idles",
+        "possible homes"
+    ],
+    "sections": [
+        {
+            "name": "idles",
+            "total-pages": 1,
+            "ids": [
+                "175"
+            ],
+            "page-list": [
+                {
+                    "id": "175",
+                    "name": "Turin",
+                    "img": "https://static.wikia.nocookie.net/forgottenrealms/images/e/ed/Turin.JPG/revision/latest/scale-to-width-down/327?cb=20200926123448",
+                    "url": "https://forgottenrealms.fandom.com/wiki/Turin",
+                    "blurb": "Turin was an unattractive man by most standards. His features included a huge nose, droopy eyes and huge ears. A disease he suffered from as a child left his body completely devoid of hair.",
+                    "topics": [
+                        "description",
+                        "personality",
+                        "possessions",
+                        "history"
+                    ],
+                    "topic-list": [
+                        {
+                            "topic-name": "description",
+                            "paras": "Turin was an unattractive man by most standards. His features included a huge nose, droopy eyes and huge ears. A disease he suffered from as a child left his body completely devoid of hair."
+                        },
+                        {
+                            "topic-name": "personality",
+                            "paras": "Turin had low self-esteem."
+                        },
+                        {
+                            "topic-name": "possessions",
+                            "paras": "He wore a simple copper ring inscribed with his mother's name."
+                        },
+                        {
+                            "topic-name": "history",
+                            "paras": "Turin survived an attack at sea by a zaratan as a young child, floating on a piece of drift wood from Suq Bay until he reached shore along the southern region of the High Desert. He wandered for a week through the desert until a tribe of nomads found him.\n\nHe spent the next decade of his life with the tribe where he learned the skills of the desert riders. He discovered a knack with dealing with animals and was even able to soothe them with a touch.\n\nHis tribe was ambushed by the House of Dhi'b and Turin would have perished had Khafaz ibn Dahz not arrived with a compliment of Tajari soldiers to drive off the raiders. Khafaz planned on selling Turin as a slave but quickly discovered his useful abilities with animals and the ways of the desert. Turin worked with Khafaz since being rescued in the desert."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "possible homes",
+            "total-pages": 1,
+            "ids": [
+                "3240"
+            ],
+            "page-list": [
+                {
+                    "id": "3240",
+                    "name": "Seinin",
+                    "img": "default.png",
+                    "url": "https://forgottenrealms.fandom.com/wiki/Seinin",
+                    "blurb": "Seinin was a particularly dirty and depressing village. Most of the structures within the village were simple peasant shacks known as minka, built from wood with latticed walls and straw-thatched roofs. Apart from these poor residences were small barns, warehouses, and shops.\n\nThe people of Seinin were suspicious of strangers and not at all welcoming. The village had a population of about 475 individuals after Wa Year\u00a01770 (1352\u00a0DR).",
+                    "topics": [
+                        "description",
+                        "geography",
+                        "government",
+                        "trade",
+                        "defenses",
+                        "religion",
+                        "notable inhabitants",
+                        "history"
+                    ],
+                    "topic-list": [
+                        {
+                            "topic-name": "description",
+                            "paras": "Seinin was a particularly dirty and depressing village. Most of the structures within the village were simple peasant shacks known as minka, built from wood with latticed walls and straw-thatched roofs. Apart from these poor residences were small barns, warehouses, and shops.\n\nThe people of Seinin were suspicious of strangers and not at all welcoming. The village had a population of about 475 individuals after Wa Year\u00a01770 (1352\u00a0DR)."
+                        },
+                        {
+                            "topic-name": "geography",
+                            "paras": "Seinin was located on the Sea of Patience on the west coast of the Fochu Peninsula of the island of Tsukishima. It was located near the Momoben Forest."
+                        },
+                        {
+                            "topic-name": "government",
+                            "paras": "Villages in Wa were run by an administrator known as a shoya, typically a minor samurai, and Seinin was no different in this respect. The shoya could call upon a local militia if needed. The shoya of Seinin after Wa Year 1770 (1352 DR) was Toi Jujishiki, who was a lazy man."
+                        },
+                        {
+                            "topic-name": "trade",
+                            "paras": "Like the other tiny settlements of the region, Seinin had little contact with the other villages, much less with the rest of Kara-Tur or regions beyond. The people were fishers, but there is no evidence that they traded in fish.\n\nThe village collected a \"visitor's tax\" of 1 yuan per person to enter. The cost to spend the night in one of the small minkas was 4 fen. The village did not produce anything more expensive than 3 tael to sell."
+                        },
+                        {
+                            "topic-name": "defenses",
+                            "paras": "About 48 citizens of Seinin served in its militia. These persons were only armed with simple clubs or spears.\n\nThe village also was home to a band of kabukimono, a group of retired warriors and ronin wearing colorful uniforms and calling themselves the Soldiers of Iron. The Soldiers of Iron had free reign to behave as they pleased in the village and often caused problems, especially when their members got drunk."
+                        },
+                        {
+                            "topic-name": "religion",
+                            "paras": "Like most of the villages of the Peninsula, the people of Seinin were strict followers of the Path of Enlightenment. They were usually strongly opposed to anyone visiting their village who would not demonstrate devotion to the Path by making a donation to a shrine, reciting a prayer, or spitting on the symbol of Chauntea, who was considered a heretical faith."
+                        },
+                        {
+                            "topic-name": "notable inhabitants",
+                            "lists": [
+                                [
+                                    "Abutsu, a widow in the village who was witness to the murder of Toshi.",
+                                    "Cho, a man who moved into Toshi's old minka after her murder.",
+                                    "Ichi Krijiku, the leader of the Soldiers of Iron.",
+                                    "Toshi, the ex-wife of samurai Osari Minhiro."
+                                ]
+                            ]
+                        },
+                        {
+                            "topic-name": "history",
+                            "paras": "Sometime after Wa Year 1770 (1352 DR), deposed coiled dragon Za-Jikku began murdering citizens of the many villages of the Fochu Peninsula, transforming them into magical butterflies, the breath of which would create yun ch'i, the vapor of death, which he would use to live forever.\n\nAs part of his plan, Za-Jikku sent servants dressed in golden robes to pay members of the Soldiers of Iron to kill several of the villagers and hand over their bodies to Za-Jikku for transformation."
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "character-name": "Charlie",
+    "cBio": "Criminal: You have access to a contact/liaison to get connected to other criminals.\nSpecifically, you know the local messengers, corrupt caravan masters, and seedy travelers.\nYou are considered 1 of these: Blackmailers, Burglar, Enforcer, Fence, Highway Robber, Hired Killer, Pickpocket, Smuggler\n",
+    "cClass": "Fighter",
+    "cRace": "Hill Dwarf",
+    "cOrigin": "",
+    "isCamp": false,
+    "cSex": "",
+    "cArch": "Battle Master",
+    "vNum": 0,
+    "page-total": 0,
+    "section-names": [
+        "inspiration"
+    ],
+    "sections": [
+        {
+            "name": "inspiration",
+            "total-pages": 0,
+            "ids": [],
+            "page-list": []
+        }
+    ]
+}

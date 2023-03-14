@@ -1,0 +1,7 @@
+Background Files should have at minimum 8 lines per file.
+Class Files should have minimum 31 lines per file. (Currently 1 is complete, 1 is not fully set up.)
+Races Should have minimum 8 lines per file.
+
+$List.txt file is only for a selected and accepted list of things to choose from when randomizing.
+$Template.txt is just to show how each section works. 
+If you want to add your own, follow the guide and update the list!

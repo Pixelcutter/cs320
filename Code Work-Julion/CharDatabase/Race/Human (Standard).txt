@@ -1,0 +1,10 @@
+Human
+1, 1, 1, 1, 1, 1
+Medium
+30
+16, 90
+Common, +1 Extra Player Choice
+0
+**
+0
+**

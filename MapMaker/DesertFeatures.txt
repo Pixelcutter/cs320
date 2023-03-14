@@ -1,0 +1,83 @@
+Dunes,Rock Formations
+River,Dry
+Inhabited,Uninhabited
+Deadly Heat,Tolerable Heat
+Cacti,No Plants
+Reptiles,Mammals
+Auroras,Empty Skies
+Rocky
+Sandstorms
+
+Sandworms
+Traversable
+Trading Route
+Scattered Oasis
+Tomb
+Tornados
+Mirages
+
+
+Monster
+Cataclysmic Event
+Ruins
+Temple
+Underground Passages
+
+
+@Descriptions
+- Dunes
+This desert is covered in sand dunes, some as tall as skyscrapers.
+- Rock Formations
+This desert is covered in peculiar rock formations.
+- River
+There is a river that splits this place in half.
+- Dry
+This place is known for being dry, with a vital lack of water sources.
+- Inhabited
+There are several settlements scattered throughout this land.
+- Uninhabited
+As far as anyone is aware, no one lives here.
+- Deadly Heat
+The heat here can turn deadly in an instant, travelers must take extra caution.
+- Tolerable Heat
+It's hot here, but not deadly, while it may lead to heat exhaustion and care should be taken, it's unlikely someone will die solely from the heat.
+- Cacti
+This place is filled with desert plants, such as cacti and tumbleweeds.
+- No Plants
+This place has a distinct lack of plants to cast shade.
+- Reptiles
+This place seems to be crawling with reptiles, from little lizards, to legends of much larger beasts.
+- Mammals
+While many deserts have reptile inhabitants, this one has a great many mammalian inhabitants, form the smallest mouse to great beasts.
+- Auroras
+This place is known for having a beautiful night sky, filled with the auroras.
+- Empty Skies
+The sky here is vast, filled with nothing but stars.
+- Rocky
+The ground here is rocky, and even in places with sand, the rock can be found if you move the sand enough.
+- Sandstorms
+This place is prone to sandstorms.
+- Sandworms
+Sandworms make their home here, burrowing deep within the desert.
+- Traversable
+This desert is traversable, and can be done with preparation.
+- Trading Route
+This desert has well known trading routes through it.
+- Scattered Oasis
+There are scattered oasis here which many animals call home, they may also provide respite to a weary traveler.
+- Tomb
+This desert is known to house ancient tombs.
+- Tornados
+This place is prone to tornados.
+- Mirages
+Mirages are common here, sometimes they seem natural, such as a lake. Other times... not so much.
+- Monster
+A great beast makes it's home here.
+- Cataclysmic Event
+This was once the site of a cataclysmic event, and it's current state is due to that.
+- Ruins
+This place is covered in ruins of civilizations long gone.
+- Temple
+This place has a secret temple in it.
+- Underground Passages
+Deep underneath the sand, span thousands of miles of passages, in which people may live, or travel. The passages are large enough for countless armies to pass.

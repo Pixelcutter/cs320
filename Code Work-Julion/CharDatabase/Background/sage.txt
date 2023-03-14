@@ -1,0 +1,10 @@
+sage
+arcana, history
+0
+2
+bottle of ink, quill, small knife, common clothes
+0,0,10
+**
+You gain a specialty of scholarly training, usually those that match magical, chemical, or astrological style.
+You can know where to find info within a city or a location that has public access to it. With your background, you also have access to more places than a normal person would.
+**

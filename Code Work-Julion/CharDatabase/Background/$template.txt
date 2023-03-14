@@ -1,0 +1,11 @@
+0   <name>      acolyte
+1   <skills>    insight, religion
+2   <tools>     0 #none
+3   <Language>  2
+4   <equipment> Holy Symbol, Prayer Book or Prayer Wheel, 5 sticks of incense, vestments, common clothes
+5   <Start $>   0,0,15      Copper, Silver, Gold
+6   **
+7   <Special 1>
+8   <Special 2>
+9   . . .
+10  **

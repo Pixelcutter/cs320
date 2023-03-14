@@ -1,0 +1,40 @@
+Acolyte
+Anthropologist
+Archeologist
+Athlete
+Charlatan
+City Watch
+Clan Crafter
+Cloister Scholar
+Courtier
+Criminal
+Entertainer
+Faceless
+Faction Agent
+Far Traveler
+Feylost
+Fisher
+Folk Hero
+Gladiator
+Guild Artisan
+Guild merchant
+haunted one
+hermit
+house agent
+inheritor
+investigator
+knight
+knight of the order
+marine
+mercenary veteran
+noble
+outlander
+pirate
+sage
+sailor
+shipwright
+smuggler
+soldier
+spy
+urban bounty hunter
+urchin

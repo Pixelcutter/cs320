@@ -1,0 +1,10 @@
+entertainer
+acrobatics, performance
+disguise kit, musical instrument
+0
+musical instrument, trinket of a lover, costume
+0,0,15
+**
+You gain a entertainer routine that you can practice and earn money from. talk with your DM for what you two can create.
+You can earn free lodging and food for modest or comfortable level if you perform each night, in addition, you can make money with these performances.
+**

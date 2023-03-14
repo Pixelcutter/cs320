@@ -1,0 +1,41 @@
+wizard
+3, 2, 1, 0, 1, 2
+0, 0, 0, 1, 1, 0
+0, 0, 0, 0
+0, 0, Dagger, Dart, Sling, Quarterstaff, Light Crossbow
+Writing Kit, Arcane Research Kit
+2
+Arcana, History, Insight, Investigation, Medicine, Religion
+Illusion, Necromancy, War Magic, Evocation
+6
+**
+SpellCasting, Arcane Recovery
+Arcane Tradition
+Cantrip Formulas (Optional)
+Ability Score Improvement
+
+Arcane Tradition Feature
+
+Ability Score Improvement
+
+Arcane Tradition Feature
+
+Ability Score Improvement
+
+Arcane Tradition Feature
+
+Ability Score Improvement
+
+Spell Mastery
+Ability Score Improvement
+Signature Spells
+**
+SpellCasting: You gain the ability to cast spells using the INT ability score as your modifier. See the Wizard Chart for more details.
+Arcane Recovery: Once per day, after a short rest, you can recover a total of 1/2 your level worth of spell slots of level. (Lvl 4 wizard can get 1 lvl-2 spell slot, or 2 lvl-1 spell slots)
+Arcane Tradition: You can choose an arcane tradition to be your archetype.
+Cantrip Formulas (Optional): You can replace a wizard cantrip with another during a lost rest.
+Ability Score Improvement: You may upgrade 2 ability scores by 1 up to a max of 20, or take a feat to upgrade your character.
+Arcane Tradition Feature: With the Chosen Arcane Tradition Archetype, you can gain an effect at the coresponding level.
+Spell Mastery: Choose a Lvl-1 and a Lvl-2 spell, when you have them prepared, you can cast them for free at their lowest level. You can rechoose these after a long rest (or 8 hours).
+Signature Spells: Choose 2 Lvl-3 spells, you can cast them once for free per short or long rest, and do not count to the number of spells you have prepared.
+**

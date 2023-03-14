@@ -1,0 +1,9 @@
+noble
+History, Persuasion
+Gaming set
+1
+Fine Clothing, Signet Ring, Scroll of Pedigree
+0,0,25
+**
+You hold a position of privillege, and are welcomed into high society. Commonfolk may give accommodations to appease you.
+**

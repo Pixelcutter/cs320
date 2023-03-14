@@ -1,0 +1,23 @@
+Charlie
+4
+Dwarf
+Hill
+Fighter
+Battle Master
+criminal
+[15, 10, 13, 13, 14, 11]
+**
+You have access to a contact/liaison to get connected to other criminals.
+Specifically, you know the local messengers, corrupt caravan masters, and seedy travelers.
+You are considered 1 of these: Blackmailers, Burglar, Enforcer, Fence, Highway Robber, Hired Killer, Pickpocket, Smuggler
+**
+Darkvision: Able to see in the dark within a radius of 60 ft.
+Combat Training: Proficency in Battleaxe, Handaxe, Light Hammer, and Warhammer
+Tool Proficency: Choose 1 tool to be trained in: Smiths Tools, Brewers Supplies, or Mason's Tools
+Stonecutting: When you make a History Check on Stonework, you add double proficiency to the check instead of normal.
+**
+Level [1]: Fighting Style, Second Wind
+Level [2]: Action Surge (x1)
+Level [3]: !!Martial Archetype
+Level [4]: Ability Score Improvement, Martial Versatility (Optional)
+**

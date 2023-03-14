@@ -1,0 +1,41 @@
+fighter
+1, 1, 0, 2, 2, 3
+1, 0, 1, 0, 0, 0
+1, 1, 1, 1
+1, 1
+0
+2
+acrobatics, animal handling, athletics, history, insight, intimidation, perception, survival
+Battle Master, Champion, Samurai, Gunslinger, Cavalier, Echo Knight, Psi Warrior, Rune Knight, Arcane Archer, Eldritch Knight
+10
+**
+Fighting Style, Second Wind
+Action Surge (x1)
+!!Martial Archetype
+Ability Score Improvement, Martial Versatility (Optional)
+Extra Attack (x1), Proficiency Bonus
+Ability Score Improvement, Martial Versatility (Optional)
+!!Martial Archetype feature
+Ability Score Improvement, Martial Versatility (Optional)
+Indomitable (x1), Proficiency Bonus
+!!Martial Archetype feature
+Extra Attack (x2)
+Ability Score Improvement, Martial Versatility (Optional)
+Indomitable (x2), Proficiency Bonus
+Ability Score Improvement, Martial Versatility (Optional)
+!!Martial Archetype feature
+Ability Score Improvement, Martial Versatility (Optional)
+Action Surge (x2), Indomitable (x3), Proficiency Bonus
+!!Martial Archetype feature
+Ability Score Improvement, Martial Versatility (Optional)
+Extra Attack (x3)
+**
+Fighting Style: You adopt a particular style of fighting as your specialty. Choose an option that you wish, regarding the book. You cannot take a Fighting Style Option more than once, even if you get the choice again in the future.
+Second Wind: You can regain Hit Points (HP) equal to 1d10+ Your Level. This can be done as a bonus action, and can only be used once, refreshed after a minimum short rest.
+Action Surge: You can take one additional action on your turn. This can be done once, before needing to refresh after a minimum short rest.
+!!Martial Archetype: This will allow you to gain the abilities from the chosen archetype for your class.
+Ability Score Improvement: You may upgrade 2 ability scores by 1 up to a max of 20, or take a feat to upgrade your character.
+Martial Versatility (Optional): You can replace your fighting style with another, and same goes with Maneuvers if you are a battle master.
+Indomitable: You may reroll a saving throw, and use the new roll as the save. This can be done x amount of times before needing a long rest.
+Proficiency Bonus: You increase your proficiency bonus by 1 each time this shows up.
+**

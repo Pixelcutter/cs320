@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [[ $# < 1 ]]
+then
+   echo "Supply a file to do a line count on."
+   echo -e "\t$0 <filename>"
+   exit
+elif [[ $# > 1 ]]
+then
+   echo "Too many arguments. Only one file at a time."
+   echo -e "\t$0 <filename>"
+   exit
+fi
+
+grep -v -E '^\s*(/[*/].*|}\s*|\*.*||#.*|\{\s*)$' $1 | wc -l

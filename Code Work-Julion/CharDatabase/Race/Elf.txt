@@ -1,0 +1,13 @@
+Elf
+0, 2, 0, 0, 0, 0
+Medium
+30
+100, 750
+Common, Elven
+Dark, High, Wood
+**
+Darkvision: Able to see in the dark within a radius of 60 ft.
+Fey Ancestry: Advantage against being charmed, and magic cannot put you to sleep.
+Trance: Elves don't need sleep, but meditate 4 hours a day. Therefore, an 8 hour rest can be done within a 4 hour period for Elves.
+Keen Senses: Proficiency in Perception.
+**

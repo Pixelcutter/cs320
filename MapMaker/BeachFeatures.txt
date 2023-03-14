@@ -1,0 +1,89 @@
+Cliff,Flat
+Rocky,Sandy
+Village,Uninhabited
+Fish,No Fish
+Bay,Simple
+Warm,Cold
+White,Yellow
+Spawning
+Riptide
+
+Shark Infested
+Lighthouse
+City
+Reef
+Fishery
+Stormy
+Tidepools
+
+
+Wreck
+Cave
+Abyss
+Carcass
+Ruin
+
+
+@Descriptions
+- Cliff
+This beach backs up to large cliffs.
+-Flat
+This area has very few formations.
+- Rocky
+This beach is covered in large, pointed rocks.
+- Sandy
+This beach is sandy and soft.
+- Village
+This beach has villages and towns.
+- Uninhabited
+This area is almost entirely uninhabited
+- Fish
+The waters here are inhabited by a large array of fish.
+- No fish
+Surprisingly enough, there seem to be no fish here.
+- Bay
+This beach has a large sheltered bay.
+- Simple
+The waterway here has no particular features of note.
+- Warm
+This beach and surrounding waters are warm.
+- Cold
+This beach and surrounding waters are chill.
+- White
+This beach has bright white sand.
+- Yellow
+This beach has yellow sand.
+- Spawning
+This beach is known for the variety of animals that come here to lay eggs or raise young.
+- Riptide
+This beach has a deadly riptide.
+- Shark Infested
+This area is infested with sharks.
+- Lighthouse
+This beach has a lighthouse.
+- City
+This beach has a large city.
+- Reef
+The waters here have a beautiful reef.
+- Fishery
+This beach hosts a fishery.
+- Stormy
+This beach is known for it's storms, turning the sky dark grey and whipping up waves within minutes.
+- Tidepools
+This beach has a variety of tidepools.
+- Wreck
+This beach has many large wrecks dotting the coastline.
+- Cave
+This place is known for it's intricate cave system.
+- Abyss
+The waters here hide a secret hole, descending far farther than any person has ever gone.
+- Carcass
+This beach regularly has large carcasses washed up on it.
+- Ruin
+This beach hosts an ancient ruin.
+
+~~~~~~~~~Explanations
+This is a list of traits assigned by biome. Each hex will be given a biome, and will gain additional traits based on that.
+Each trait has a description linked to it, which will be displayed to the user when they select a hex tile.
+Each tile will have a total of 6 traits, each is marked by a percentage chance to get it (out of 100), and some of the traits are none.
+Meaning, a tile may only have 2 traits. Once a trait is selected, it cannot be selected again.

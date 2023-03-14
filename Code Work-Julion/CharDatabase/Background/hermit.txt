@@ -1,0 +1,10 @@
+hermit
+Medicine, Religion
+Herbalism Kit
+1
+scroll case stuffed full of notes from your studies or prayers, winter blanket, set of common clothes, herbalism kit
+0,0,5
+**
+You have been very secluded, and you/your dm can come up with a story on why your character was secluded for so long.
+You have made a discovery related to your seclusion that is built between you and your DM.
+**

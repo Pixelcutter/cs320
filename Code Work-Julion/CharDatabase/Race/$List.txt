@@ -1,0 +1,3 @@
+Human (Standard)
+Dwarf
+Elf

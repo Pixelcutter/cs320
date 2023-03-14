@@ -1,0 +1,10 @@
+fisher
+history, survival
+0
+1
+Fishing tackle, a net, a favorite fishing lure or oiled leather wading boots, a set of traveler's clothes
+0,0,10
+**
+You gain advantage when making checks using the fishing. Including this, you can feed up to you and 10 other people.
+You gain a fishing tale, a story that you can tell and is true. Please make sure to talk with your DM on what it is.
+**

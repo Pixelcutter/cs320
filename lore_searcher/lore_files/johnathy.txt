@@ -1,0 +1,44 @@
+                         <{{  Character: Johnathy  }}>
+                         
+Class: Drifter (Skeevy)
+Race: Human
+Sex: Male
+Origin: No One Knows 
+
+He like to drift
+
+
+Section: Idles
+---------------
+********************************************************************************
+
+                                Turin (id: 175)
+                                
+
+Topics Included: description, personality, possessions, history
+Description: Turin was an unattractive man by most standards. His features
+included a huge nose, droopy eyes and huge ears. A disease he suffered from as a
+child left his...
+
+Source-URL: https://forgottenrealms.fandom.com/wiki/Turin
+Img-URL: https://static.wikia.nocookie.net/forgottenrealms/images/e/ed/Turin.JPG
+/revision/latest/scale-to-width-down/327?cb=20200926123448
+
+********************************************************************************
+
+Section: Possible Homes
+------------------------
+********************************************************************************
+
+                               Seinin (id: 3240)
+                               
+
+Topics Included: description, geography, government, trade, defenses, religion...
+Description: Seinin was a particularly dirty and depressing village. Most of the
+structures within the village were simple peasant shacks known as minka, built
+from wood ...
+
+Source-URL: https://forgottenrealms.fandom.com/wiki/Seinin
+Img-URL: default.png
+
+********************************************************************************
